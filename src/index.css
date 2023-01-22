@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: Inter;
+    font-weight: 400;
+    src: url("./assets/fonts/inter/static/Inter-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: Inter;
+    font-weight: 700;
+    src: url("./assets/fonts/inter/static/Inter-Bold.ttf");
+  }
+
+  @font-face {
+    font-family: Lora;
+    font-weight: 400;
+    src: url("./assets/fonts/lora/static/Lora-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: Lora;
+    font-weight: 700;
+    font-style: italic;
+    src: url("./assets/fonts/lora/static/Lora-BoldItalic.ttf");
+  }
+
+  @font-face {
+    font-family: Lora;
+    font-weight: 700;
+    src: url("./assets/fonts/lora/static/Lora-Bold.ttf");
+  }
+
+  @font-face {
+    font-family: Inconsolata;
+    font-weight: 400;
+    src: url("./assets/fonts/inconsolata/static/Inconsolata-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: Inconsolata;
+    font-weight: 700;
+    src: url("./assets/fonts/inconsolata/static/Inconsolata-Bold.ttf");
+  }
+}
