@@ -47,14 +47,14 @@
   }
 
   html {
-    font-family: "Sans";
+    @apply font-sans;
   }
 
   html.serif {
-    font-family: "Lora";
+    @apply font-serif;
   }
 
   html.mono {
-    font-family: "Mono ";
+    @apply font-mono;
   }
 }

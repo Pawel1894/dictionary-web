@@ -21,7 +21,11 @@ module.exports = {
       },
       white: "rgb(255,255,255)",
     },
-    extend: {},
+    extend: {
+      dropShadow: {
+        "3xl": "0px 5px 30px rgba(0, 0, 0, 0.1)",
+      },
+    },
   },
   plugins: [],
 };
