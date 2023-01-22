@@ -45,4 +45,16 @@
     font-weight: 700;
     src: url("./assets/fonts/inconsolata/static/Inconsolata-Bold.ttf");
   }
+
+  html {
+    font-family: "Sans";
+  }
+
+  html.serif {
+    font-family: "Lora";
+  }
+
+  html.mono {
+    font-family: "Mono ";
+  }
 }
