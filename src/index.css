@@ -57,4 +57,12 @@
   html.mono {
     @apply font-mono;
   }
+
+  body {
+    @apply bg-white;
+  }
+
+  body.dark {
+    @apply bg-neutral-100;
+  }
 }
