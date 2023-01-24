@@ -7,20 +7,9 @@ export function useFont() {
   function updateFont(e: FONTS) {
     setActiveFont(e);
 
-    const htmlEl = document.getElementsByTagName("html")[0];
-    if (!htmlEl) return;
-
-    if (e === FONTS.Mono && !htmlEl.classList.contains("mono")) {
-      htmlEl.className = "mono";
-      return;
-    }
-
-    if (e === FONTS.Serif && !htmlEl.classList.contains("serif")) {
-      htmlEl.className = "serif";
-      return;
-    }
-
-    if (htmlEl.classList.length > 0) htmlEl.className = "";
+    const appEntry = document.getElementById("app-entry");
+    if (!appEntry) return;
+    appEntry.setAttribute("data-font", e.toLowerCase());
   }
 
   return {

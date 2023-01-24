@@ -46,23 +46,24 @@
     src: url("./assets/fonts/inconsolata/static/Inconsolata-Bold.ttf");
   }
 
-  html {
-    @apply font-sans;
-  }
-
-  html.serif {
-    @apply font-serif;
-  }
-
-  html.mono {
-    @apply font-mono;
-  }
-
+  /* TODO: How to make it work on all browsers via postcss*/
   body {
     @apply bg-white;
   }
 
-  body.dark {
+  body:has(.dark) {
     @apply bg-neutral-100;
+  }
+
+  html:has(#app-entry[data-font="sans serif"]) {
+    @apply font-sans;
+  }
+
+  html:has(#app-entry[data-font="mono"]) {
+    @apply font-mono;
+  }
+
+  html:has(#app-entry[data-font="serif"]) {
+    @apply font-serif;
   }
 }
