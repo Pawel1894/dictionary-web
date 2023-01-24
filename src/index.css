@@ -46,12 +46,11 @@
     src: url("./assets/fonts/inconsolata/static/Inconsolata-Bold.ttf");
   }
 
-  /* TODO: How to make it work on all browsers via postcss*/
   body {
     @apply bg-white;
   }
 
-  body:has(.dark) {
+  body:has(#app-entry.dark) {
     @apply bg-neutral-100;
   }
 

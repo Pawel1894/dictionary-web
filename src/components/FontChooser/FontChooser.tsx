@@ -19,32 +19,32 @@ export default function FontChooser(): ReactElement {
   return (
     <div className="relative">
       <button onClick={toggleSelector} className="flex items-center gap-x-4">
-        <span className="text-sm text-neutral-300 font-bold">{activeFont}</span>
+        <span className="text-sm text-neutral-300 dark:text-white font-bold">{activeFont}</span>
         <img className={`${isActive ? "rotate-180" : "rotate-0"}`} src={iconArrow} />
       </button>
       <ul
         className={`${
           isActive ? "block" : "hidden"
-        } absolute bg-white p-6 drop-shadow-3xl mt-3 w-44 right-0 rounded-2xl`}
+        } absolute bg-white dark:bg-neutral-200 p-6 drop-shadow-3xl dark:shadow-primary mt-3 w-44 right-0 rounded-2xl`}
       >
         <li
           data-testid="fontSans"
           onClick={() => onItemClick(FONTS.Sans)}
-          className="text-sm font-bold font-sans cursor-pointer hover:text-primary active:text-primary"
+          className="text-sm font-bold font-sans cursor-pointer dark:text-white hover:text-primary active:text-primary"
         >
           {FONTS.Sans}
         </li>
         <li
           data-testid="fontSerif"
           onClick={() => onItemClick(FONTS.Serif)}
-          className="mt-4 text-sm font-bold font-serif cursor-pointer hover:text-primary active:text-primary"
+          className="mt-4 text-sm font-bold font-serif cursor-pointer dark:text-white hover:text-primary active:text-primary"
         >
           {FONTS.Serif}
         </li>
         <li
           data-testid="fontMono"
           onClick={() => onItemClick(FONTS.Mono)}
-          className="mt-4 text-sm font-bold font-mono cursor-pointer hover:text-primary active:text-primary"
+          className="mt-4 text-sm font-bold font-mono cursor-pointer dark:text-white hover:text-primary active:text-primary"
         >
           {FONTS.Mono}
         </li>
