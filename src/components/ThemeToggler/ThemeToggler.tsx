@@ -6,6 +6,9 @@ export default function ThemeToggler(): ReactElement {
   function changeTheme() {
     setDarkTheme((prev) => !prev);
     document.getElementById("app-entry")!.classList.toggle("dark");
+
+    // firefox please implement css has selector 😥
+    document.getElementsByTagName("body")[0].classList.toggle("dark");
   }
 
   return (

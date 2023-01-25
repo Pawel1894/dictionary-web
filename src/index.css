@@ -50,7 +50,24 @@
     @apply bg-white;
   }
 
-  body:has(#app-entry.dark) {
+  body.dark {
+    @apply bg-neutral-100;
+  }
+
+  html[data-font="sans serif"] {
+    @apply font-sans;
+  }
+
+  html[data-font="mono"] {
+    @apply font-mono;
+  }
+
+  html[data-font="serif"] {
+    @apply font-serif;
+  }
+
+  /* Waiting for firefox to implement has selector 😥 */
+  /* body:has(#app-entry.dark) {
     @apply bg-neutral-100;
   }
 
@@ -64,5 +81,5 @@
 
   html:has(#app-entry[data-font="serif"]) {
     @apply font-serif;
-  }
+  } */
 }

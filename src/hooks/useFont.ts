@@ -10,6 +10,9 @@ export function useFont() {
     const appEntry = document.getElementById("app-entry");
     if (!appEntry) return;
     appEntry.setAttribute("data-font", e.toLowerCase());
+
+    // firefox please implement css has selector 😥
+    document.getElementsByTagName("html")[0].setAttribute("data-font", e.toLowerCase());
   }
 
   return {
