@@ -25,7 +25,7 @@ export default function FontChooser(): ReactElement {
       <ul
         className={`${
           isActive ? "block" : "hidden"
-        } absolute bg-white dark:bg-neutral-200 p-6 drop-shadow-3xl dark:shadow-primary mt-3 w-44 right-0 rounded-2xl`}
+        } z-10 absolute bg-white dark:bg-neutral-200 p-6 drop-shadow-3xl dark:shadow-primary mt-3 w-44 right-0 rounded-2xl`}
       >
         <li
           data-testid="fontSans"
