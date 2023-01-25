@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import SearchIcon from "../../assets/images/icon-search.svg";
 
-export default function Search() {
-  const [searchText, setSearchText] = useState<string>();
+interface Props {
+  setSearchText: React.Dispatch<React.SetStateAction<string | undefined>>;
+}
 
+export default function Search({ setSearchText }: Props) {
   return (
     <div className="mx-6 relative">
       <input
