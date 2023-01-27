@@ -12,7 +12,7 @@ export default function ThemeToggler(): ReactElement {
   }
 
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-3 md:gap-5">
       <label htmlFor="toggle" className="flex items-center">
         <input
           data-testid="themeSwitch"

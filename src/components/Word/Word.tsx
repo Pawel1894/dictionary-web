@@ -20,7 +20,7 @@ export default function Word({ data, isInitialLoading, status }: Props) {
   if (data && data.length > 0) {
     const audio = data[0].phonetics.find((item) => item.audio.length > 0);
     return (
-      <div className="px-6 mt-7 mb-16">
+      <div className="px-6 mt-7 md:mt-14 md:px-11">
         <Heading phonetic={data[0].phonetic} text={data[0].word} phonetics={audio} />
         <Meanings data={data[0].meanings} />
         <SourceUrl data={data[0].sourceUrls} />

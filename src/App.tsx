@@ -8,7 +8,12 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <div data-testid="appEntry" id="app-entry" data-font="sans serif">
+      <div
+        className="max-w-3xl mx-auto mb-20 md:mb-28"
+        data-testid="appEntry"
+        id="app-entry"
+        data-font="sans serif"
+      >
         <Header />
         <main>
           <Body />
