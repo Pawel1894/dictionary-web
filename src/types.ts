@@ -8,6 +8,7 @@ export type TWord = {
 export type TMeanings = {
   partOfSpeech: string;
   definitions: Array<TDefinitions>;
+  synonyms: Array<string>;
 };
 
 export type TPhonetics = {

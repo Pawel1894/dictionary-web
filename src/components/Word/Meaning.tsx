@@ -1,12 +1,8 @@
 import React from "react";
-import { TDefinitions } from "../../types";
+import { TDefinitions, TMeanings } from "../../types";
+import Synonyms from "./Synonyms";
 
-type Props = {
-  partOfSpeech: string;
-  definitions: Array<TDefinitions>;
-};
-
-export default function Meaning({ partOfSpeech, definitions }: Props) {
+export default function Meaning({ partOfSpeech, definitions, synonyms }: TMeanings) {
   return (
     <div className="mb-6">
       <div className="w-full flex items-center gap-6">
@@ -15,13 +11,17 @@ export default function Meaning({ partOfSpeech, definitions }: Props) {
       </div>
       <div>
         <span className="text-neutral-500 text-base mt-9 mb-4 block">Meaning</span>
-        <ul className="list-disc">
+        <ul className="list-disc ml-3">
           {definitions
             ? definitions.map((item) => (
-                <li className="pl-5 mt-5 text-sm text-neutral-300 marker:text-primary">{item.definition}</li>
+                <li key={item.definition} className="pl-5 mt-5 text-sm text-neutral-300 marker:text-primary">
+                  {item.definition}
+                </li>
               ))
             : null}
         </ul>
+
+        {synonyms && synonyms.length > 0 ? <Synonyms synonyms={synonyms} /> : null}
       </div>
     </div>
   );
