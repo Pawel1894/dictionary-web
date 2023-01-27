@@ -4,6 +4,7 @@ import Error from "../UI/Error";
 import Heading from "./Heading";
 import { TWord } from "../../types";
 import Meanings from "./Meanings";
+import SourceUrl from "./SourceUrl";
 
 type Props = {
   data: Array<TWord> | undefined;
@@ -22,6 +23,7 @@ export default function Word({ data, isInitialLoading, status }: Props) {
       <div className="px-6 mt-7 mb-16">
         <Heading phonetic={data[0].phonetic} text={data[0].word} phonetics={audio} />
         <Meanings data={data[0].meanings} />
+        <SourceUrl data={data[0].sourceUrls} />
       </div>
     );
   }

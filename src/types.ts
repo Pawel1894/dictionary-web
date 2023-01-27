@@ -3,6 +3,7 @@ export type TWord = {
   phonetic: string;
   phonetics: Array<TPhonetics>;
   meanings: Array<TMeanings>;
+  sourceUrls: Array<string>;
 };
 
 export type TMeanings = {
