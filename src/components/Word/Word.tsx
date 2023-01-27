@@ -1,21 +1,22 @@
 import React from "react";
 import LoadIndicator from "../UI/LoadIndicator";
-import Error from "../UI/Error";
+import Error from "./Error";
 import Heading from "./Heading";
 import { TWord } from "../../types";
 import Meanings from "./Meanings";
 import SourceUrl from "./SourceUrl";
+import { AxiosError } from "axios";
 
 type Props = {
   data: Array<TWord> | undefined;
   isInitialLoading: boolean;
-  status: "error" | "success" | "loading";
+  isError: boolean;
+  error: AxiosError;
 };
 
-export default function Word({ data, isInitialLoading, status }: Props) {
+export default function Word({ data, isInitialLoading, isError, error }: Props) {
   if (isInitialLoading) return <LoadIndicator />;
-
-  if (status === "error") <Error />;
+  if (isError) return <Error error={error} />;
 
   if (data && data.length > 0) {
     const audio = data[0].phonetics.find((item) => item.audio.length > 0);

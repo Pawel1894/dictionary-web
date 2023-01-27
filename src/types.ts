@@ -20,3 +20,9 @@ export type TDefinitions = {
   definition: string;
   example?: string;
 };
+
+export type TNotFound = {
+  title: string;
+  message: string;
+  resolution: string;
+};
