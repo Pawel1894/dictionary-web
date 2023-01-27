@@ -13,11 +13,23 @@ export default function Meaning({ partOfSpeech, definitions, synonyms }: TMeanin
         <span className="text-neutral-500 text-base mt-9 mb-4 block">Meaning</span>
         <ul className="list-disc ml-3">
           {definitions
-            ? definitions.map((item) => (
-                <li key={item.definition} className="pl-5 mt-5 text-sm text-neutral-300 marker:text-primary">
-                  {item.definition}
-                </li>
-              ))
+            ? definitions.map((item) => {
+                return (
+                  <>
+                    <li
+                      key={item.definition}
+                      className="pl-5 mt-5 text-sm text-neutral-300 marker:text-primary"
+                    >
+                      {item.definition}
+                    </li>
+                    {item.example ? (
+                      <li key={item.example} className="pl-5 mt-3 text-sm text-neutral-500 list-none">
+                        <blockquote>“{item.example}”</blockquote>
+                      </li>
+                    ) : null}
+                  </>
+                );
+              })
             : null}
         </ul>
 

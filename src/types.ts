@@ -17,4 +17,5 @@ export type TPhonetics = {
 
 export type TDefinitions = {
   definition: string;
+  example?: string;
 };
