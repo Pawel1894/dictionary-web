@@ -1,15 +1,38 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement, useState, useEffect } from "react";
 
 export default function ThemeToggler(): ReactElement {
   const [darkTheme, setDarkTheme] = useState(false);
 
   function changeTheme() {
-    setDarkTheme((prev) => !prev);
-    document.getElementById("app-entry")!.classList.toggle("dark");
+    if (!darkTheme) changeThemeToDark();
+    else changeThemeToLight();
+  }
+
+  function changeThemeToDark() {
+    setDarkTheme(true);
+    const appEl = document.getElementById("app-entry");
+    const bodyEl = document.getElementsByTagName("body")[0];
+    if (!appEl?.classList.contains("dark")) appEl?.classList.add("dark");
 
     // firefox please implement css has selector 😥
-    document.getElementsByTagName("body")[0].classList.toggle("dark");
+    if (!bodyEl?.classList.contains("dark")) bodyEl?.classList.add("dark");
   }
+
+  function changeThemeToLight() {
+    setDarkTheme(false);
+    const appEl = document.getElementById("app-entry");
+    const bodyEl = document.getElementsByTagName("body")[0];
+    if (appEl?.classList.contains("dark")) appEl?.classList.remove("dark");
+
+    // firefox please implement css has selector 😥
+    if (bodyEl?.classList.contains("dark")) bodyEl?.classList.remove("dark");
+  }
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      changeThemeToDark();
+    }
+  }, []);
 
   return (
     <div className="flex items-center gap-3 md:gap-5">
