@@ -1,6 +1,7 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement, useState, useEffect } from "react";
 import iconArrow from "../../assets/images/icon-arrow-down.svg";
 import { FONTS } from "../../enums";
+import { getItem, saveItem } from "../../helpers/localStorage";
 import { useFont } from "../../hooks/useFont";
 
 export default function FontChooser(): ReactElement {
@@ -13,8 +14,17 @@ export default function FontChooser(): ReactElement {
 
   function onItemClick(e: FONTS) {
     updateFont(e);
+    saveItem("font", e);
     toggleSelector();
   }
+
+  useEffect(() => {
+    const localData: FONTS = getItem("font");
+    if (localData) updateFont(localData);
+    else {
+      saveItem("font", activeFont);
+    }
+  }, []);
 
   return (
     <div className="relative">
