@@ -11,12 +11,13 @@ type Props = {
   data: Array<TWord> | undefined;
   isInitialLoading: boolean;
   isError: boolean;
-  error: AxiosError;
+  error: AxiosError | null;
 };
 
 export default function Word({ data, isInitialLoading, isError, error }: Props) {
-  if (isInitialLoading) return <LoadIndicator />;
-  if (isError) return <Error error={error} />;
+  // if (isInitialLoading) return <LoadIndicator />;
+
+  if (isError && error) return <Error error={error} />;
 
   if (data && data.length > 0) {
     const audio = data[0].phonetics.find((item) => item.audio.length > 0);

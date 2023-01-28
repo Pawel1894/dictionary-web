@@ -1,7 +1,7 @@
 import App from "../../App";
-import { render, screen, userEvent, waitFor } from "../../test/test-utils";
+import { render, screen, userEvent } from "../../test/test-utils";
 
-describe("Font chooser", async () => {
+describe("Font chooser", () => {
   it("Check if app entry contains default value of font sans serif", async () => {
     render(<App />);
     const appEntry = screen.getByTestId("appEntry");

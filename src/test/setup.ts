@@ -1,4 +1,5 @@
 import "@testing-library/jest-dom";
+import { cleanup } from "@testing-library/react";
 import { vi } from "vitest";
 Object.defineProperty(window, "matchMedia", {
   writable: true,
@@ -12,4 +13,8 @@ Object.defineProperty(window, "matchMedia", {
     removeEventListener: vi.fn(),
     dispatchEvent: vi.fn(),
   })),
+});
+
+afterEach(() => {
+  cleanup();
 });

@@ -84,7 +84,10 @@ export default function Search({ setSearchText }: Props) {
       />
       <img className="absolute top-1/2 -translate-y-1/2 right-5" src={SearchIcon} alt="" aria-hidden={true} />
       {searchState.isInvalid ? (
-        <span className="absolute left-0 -bottom-8 text-accent text-base md:text-xl">
+        <span
+          data-testid="searchInputError"
+          className="absolute left-0 -bottom-8 text-accent text-base md:text-xl"
+        >
           Whoops, can’t be empty…
         </span>
       ) : null}

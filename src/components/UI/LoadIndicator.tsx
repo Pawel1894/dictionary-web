@@ -1,10 +1,8 @@
 import React from "react";
 
-type Props = {};
-
-export default function LoadIndicator({}: Props) {
+export default function LoadIndicator() {
   return (
-    <div role="status" className="flex justify-center mt-24">
+    <div aria-label="loading" role="status" className="flex justify-center mt-24">
       <svg
         aria-hidden="true"
         className="w-12 h-12 mr-2 text-neutral-600 animate-spin dark:text-neutral-300 fill-primary"
