@@ -15,7 +15,7 @@ type Props = {
 };
 
 export default function Word({ data, isInitialLoading, isError, error }: Props) {
-  // if (isInitialLoading) return <LoadIndicator />;
+  if (isInitialLoading) return <LoadIndicator />;
 
   if (isError && error) return <Error error={error} />;
 

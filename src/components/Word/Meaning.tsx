@@ -19,22 +19,16 @@ export default function Meaning({ partOfSpeech, definitions, synonyms }: TMeanin
           {definitions
             ? definitions.map((item) => {
                 return (
-                  <>
-                    <li
-                      key={item.definition}
-                      className="pl-5 mt-5 text-sm md:text-lg text-neutral-300 marker:text-primary dark:text-white"
-                    >
+                  <React.Fragment key={item.definition}>
+                    <li className="pl-5 mt-5 text-sm md:text-lg text-neutral-300 marker:text-primary dark:text-white">
                       {item.definition}
                     </li>
                     {item.example ? (
-                      <li
-                        key={item.example}
-                        className="pl-5 mt-3 text-sm md:text-lg text-neutral-500 list-none"
-                      >
+                      <li className="pl-5 mt-3 text-sm md:text-lg text-neutral-500 list-none">
                         <blockquote>“{item.example}”</blockquote>
                       </li>
                     ) : null}
-                  </>
+                  </React.Fragment>
                 );
               })
             : null}

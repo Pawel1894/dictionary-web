@@ -1,9 +1,6 @@
 import React, { useReducer, useState } from "react";
 import SearchIcon from "../../assets/images/icon-search.svg";
-
-interface Props {
-  setSearchText: React.Dispatch<React.SetStateAction<string | undefined>>;
-}
+import { saveItem } from "../../helpers/localStorage";
 
 type TReducer = {
   isChanged: boolean;
@@ -37,11 +34,18 @@ function reducer(state: TReducer, action: Action): TReducer {
   }
 }
 
-export default function Search({ setSearchText }: Props) {
+interface Props {
+  setSearchText: React.Dispatch<React.SetStateAction<string>>;
+  searchText: string;
+}
+
+export default function Search({ setSearchText, searchText }: Props) {
   const [searchState, dispatchSearchState] = useReducer(reducer, initialState);
 
   function onChangeHandler(e: React.ChangeEvent<HTMLInputElement>) {
     setSearchText(e.target.value);
+
+    if (e.target.value) saveItem("lastWord", e.target.value);
 
     if (!searchState.isChanged) {
       dispatchSearchState({
@@ -81,6 +85,7 @@ export default function Search({ setSearchText }: Props) {
         } rounded-2xl text-base font-bold w-full focus:outline-none  dark:bg-neutral-200   dark:text-white md:text-xl md:py-4`}
         type="text"
         onChange={onChangeHandler}
+        value={searchText}
       />
       <img className="absolute top-1/2 -translate-y-1/2 right-5" src={SearchIcon} alt="" aria-hidden={true} />
       {searchState.isInvalid ? (
