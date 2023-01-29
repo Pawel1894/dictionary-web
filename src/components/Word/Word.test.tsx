@@ -1,17 +1,30 @@
 import { render, screen } from "../../test/test-utils";
-import { data } from "../../test/handlers";
-import Word from "./Word";
+
+import Body from "../Body";
 
 describe("Word body", () => {
-  it("should render word heading", async () => {
-    render(<Word data={data} isInitialLoading={false} error={null} isError={false} />);
+  it("Should render word heading", async () => {
+    render(<Body />);
 
     expect(await screen.findByTestId("wordHeading")).toHaveTextContent("keyboard");
   });
 
   it("should render play button", async () => {
-    render(<Word data={data} isInitialLoading={false} error={null} isError={false} />);
+    render(<Body />);
 
     expect(await screen.findByTestId("audioBtn")).toBeVisible();
+  });
+
+  it("should render partOfSpeech noun and verb", async () => {
+    render(<Body />);
+
+    expect(await screen.findByText("noun")).toBeInTheDocument();
+    expect(await screen.findByText("verb")).toBeInTheDocument();
+  });
+
+  it("should render source url", async () => {
+    render(<Body />);
+
+    expect(await screen.findByText("https://en.wiktionary.org/wiki/keyboard")).toBeInTheDocument();
   });
 });

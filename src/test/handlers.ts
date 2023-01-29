@@ -1,4 +1,6 @@
-export const data = [
+import { rest } from "msw";
+
+const data = [
   {
     word: "keyboard",
     phonetic: "/ˈkiːbɔːd/",
@@ -66,4 +68,10 @@ export const data = [
     },
     sourceUrls: ["https://en.wiktionary.org/wiki/keyboard"],
   },
+];
+
+export const handlers = [
+  rest.get("https://api.dictionaryapi.dev/api/v2/entries/en/*", (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(data));
+  }),
 ];

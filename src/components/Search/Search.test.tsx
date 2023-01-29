@@ -11,6 +11,7 @@ describe("Search component", () => {
   it("should change input value", async () => {
     render(<App />);
     const searchInputEl = screen.getByTestId("searchInput");
+    await userEvent.clear(searchInputEl);
     await userEvent.type(searchInputEl, "test");
     expect(searchInputEl).toHaveValue("test");
   });
