@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import { createSyncStoragePersister } from "@tanstack/query-sync-storage-persister";
 import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import ConnectionStatus from "./components/UI/ConnectionStatus";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -35,6 +36,7 @@ function App() {
         </main>
         <ReactQueryDevtools initialIsOpen={false} />
       </div>
+      <ConnectionStatus />
     </PersistQueryClientProvider>
   );
 }
