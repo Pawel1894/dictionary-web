@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FONTS } from "../enums";
 
 export function useFont() {
-  const [activeFont, setActiveFont] = useState<FONTS>(FONTS.Sans);
+  const [activeFont, setActiveFont] = useState<FONTS>(FONTS.Serif);
 
   function updateFont(e: FONTS) {
     setActiveFont(e);
