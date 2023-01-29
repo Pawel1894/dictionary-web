@@ -48,20 +48,20 @@ My main goal for this project was to practice my vitest, testing library and tan
  
 ## What I learned 
  - How to cache data using tanstack query 
- - testing components that relies on api data
- - mocking rest request with msw for testing
- - creating PWA with workbox   
- - theme default value based on user's system preferences
+ - Testing components that relies on api data
+ - Mocking rest request with msw for testing
+ - Creating PWA with workbox   
+ - Theme default value based on user's system preferences
  
 ## Install process
 
-1. install [nodejs](https://nodejs.org/en/download/)
-2. navigate project folder in command line
-3. run `npm install`
-4. run `npm start`
+1. Install [nodejs](https://nodejs.org/en/download/)
+2. Navigate project folder in command line
+3. Run `npm install`
+4. Run `npm start`
 
 
 ## Build process
 
-1. open project folder in command line
-2. run `npm run build`
+1. Open project folder in command line
+2. Run `npm run build`
