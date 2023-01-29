@@ -1,6 +1,6 @@
 {
-  "name": "Dictionary",
-  "short_name": "Dictionary",
+  "name": "Your web library",
+  "short_name": "Library",
   "start_url": "/",
   "icons": [
     {
