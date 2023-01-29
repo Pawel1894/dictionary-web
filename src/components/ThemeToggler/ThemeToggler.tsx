@@ -36,7 +36,7 @@ export default function ThemeToggler(): ReactElement {
 
   return (
     <div className="flex items-center gap-3 md:gap-5">
-      <label htmlFor="toggle" className="flex items-center">
+      <label tabIndex={0} htmlFor="toggle" className="flex items-center">
         <input
           aria-label="theme switch toggler"
           data-testid="themeSwitch"
@@ -47,7 +47,7 @@ export default function ThemeToggler(): ReactElement {
           onClick={changeTheme}
         />
         <span
-          className={`inline-flex items-center justify-around w-[40px] h-[20px] relative rounded-full transition-transform before:transition-transform cursor-pointer before:w-[14px] before:h-[14px] before:rounded-[50%] before:absolute before:z-10 before:top-1/2 before:left-[0.25em] before:-translate-y-1/2 ${
+          className={`active:bg-accent inline-flex items-center justify-around w-[40px] h-[20px] relative rounded-full transition-transform before:transition-transform cursor-pointer before:w-[14px] before:h-[14px] before:rounded-[50%] before:absolute before:z-10 before:top-1/2 before:left-[0.25em] before:-translate-y-1/2 ${
             darkTheme ? "before:translate-x-[calc(100%+0.25em)] bg-primary" : "bg-neutral-500"
           } before:bg-white`}
         />
