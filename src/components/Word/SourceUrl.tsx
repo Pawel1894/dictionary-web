@@ -11,7 +11,7 @@ export default function SourceUrl({ data }: Props) {
       <span className="text-neutral-500 text-sm underline">Source</span>
       <a className="mt-2 text-neutral-300 dark:text-white text-sm flex items-end gap-2" href={data[0]}>
         <span>{data[0]}</span>
-        <img src={Icon} />
+        <img src={Icon} alt="" aria-hidden={true} />
       </a>
     </div>
   );

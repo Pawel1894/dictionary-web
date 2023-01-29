@@ -30,7 +30,12 @@ export default function FontChooser(): ReactElement {
     <div className="relative">
       <button onClick={toggleSelector} className="flex items-center gap-x-4">
         <span className="text-sm text-neutral-300 dark:text-white font-bold md:text-lg">{activeFont}</span>
-        <img className={`${isActive ? "rotate-180" : "rotate-0"}`} src={iconArrow} aria-hidden={true} />
+        <img
+          className={`${isActive ? "rotate-180" : "rotate-0"}`}
+          src={iconArrow}
+          aria-hidden={true}
+          alt=""
+        />
       </button>
       <ul
         className={`${

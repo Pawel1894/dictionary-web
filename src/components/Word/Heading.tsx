@@ -26,7 +26,12 @@ export default function Heading({ text, phonetic, phonetics }: Props) {
         <span className="text-primary text-lg md:text-2xl">{phonetic}</span>
       </div>
       {phonetics && phonetics.audio ? (
-        <button data-testid="audioBtn" onClick={playAudio} className="w-12 md:w-20">
+        <button
+          data-testid="audioBtn"
+          aria-aria-labelledby="audioLabel"
+          onClick={playAudio}
+          className="w-12 md:w-20"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75">
             <g className="group" fillRule="evenodd">
               <circle
@@ -38,7 +43,9 @@ export default function Heading({ text, phonetic, phonetics }: Props) {
               <path className="fill-primary group-hover:fill-white" d="M29 27v21l21-10.5z" />
             </g>
           </svg>
-          <span className="sr-only">listen to pronunciation</span>
+          <span id="audioLabel" className="sr-only">
+            listen to pronunciation
+          </span>
         </button>
       ) : null}
     </section>

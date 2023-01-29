@@ -38,6 +38,7 @@ export default function ThemeToggler(): ReactElement {
     <div className="flex items-center gap-3 md:gap-5">
       <label htmlFor="toggle" className="flex items-center">
         <input
+          aria-label="theme switch toggler"
           data-testid="themeSwitch"
           type="checkbox"
           name="toggle"
