@@ -16,3 +16,4 @@
 .prettierignore
 node_modules/
 design/
+dist/
