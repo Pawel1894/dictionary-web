@@ -30,6 +30,7 @@ My main goal for this project was to practice my vitest, testing library and tan
  - Font switcher with localstorage
  - Theme switcher with localstorage
  - Searching words definitions
+ - Default theme mode based on user's ``` prefers-color-scheme ```
 
 ## Built with
 
@@ -43,13 +44,14 @@ My main goal for this project was to practice my vitest, testing library and tan
  - [Tanstack query](https://tanstack.com/query/latest)
  - [Workbox](https://developer.chrome.com/docs/workbox/)
  - [Axios](https://axios-http.com/docs/intro)
- - [Dictionary api](https://dictionaryapi.dev/)
+ - [Dictionary api](https://dictionaryapi.dev/) 
  
 ## What I learned 
  - How to cache data using tanstack query 
  - testing components that relies on api data
  - mocking rest request with msw for testing
  - creating PWA with workbox   
+ - theme default value based on user's system preferences
  
 ## Install process
 
