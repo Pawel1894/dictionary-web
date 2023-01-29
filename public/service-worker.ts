@@ -27,7 +27,7 @@ registerRoute(({ request, url }: { request: Request; url: URL }) => {
   }
 
   return true;
-}, createHandlerBoundToURL(process.env.PUBLIC_URL + "/index.html"));
+}, createHandlerBoundToURL("/index.html"));
 
 registerRoute(
   ({ url }) => url.origin === self.location.origin && url.pathname.endsWith(".png"),

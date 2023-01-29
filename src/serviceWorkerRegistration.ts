@@ -6,7 +6,7 @@ type Config = {
 export function register(config?: Config) {
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
-      const swUrl = `/service-worker.js`;
+      const swUrl = `/service-worker.ts`;
 
       registerValidSW(swUrl, config);
     });

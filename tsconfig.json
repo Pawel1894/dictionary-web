@@ -16,6 +16,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "src/serviceWorkerRegistration.ts"],
+  "include": ["src", "public/service-worker.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
