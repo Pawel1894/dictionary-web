@@ -38,6 +38,7 @@ export default function Heading({ text, phonetic, phonetics }: Props) {
               <path className="fill-primary group-hover:fill-white" d="M29 27v21l21-10.5z" />
             </g>
           </svg>
+          <span className="sr-only">listen to pronunciation</span>
         </button>
       ) : null}
     </section>

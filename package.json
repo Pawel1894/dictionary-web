@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "coverage": "vitest run --coverage",
     "test": "vitest",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "pwa-asset": "npx pwa-asset-generator logo.svg icons"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
