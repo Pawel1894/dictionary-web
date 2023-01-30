@@ -29,9 +29,9 @@ function App() {
         id="app-entry"
         data-font="sans serif"
       >
-        <h1 className="sr-only">This is dictionary app where you can find words definitions</h1>
         <Header />
         <main>
+          <h1 className="sr-only">This is dictionary app where you can find words definitions</h1>
           <Body />
         </main>
         <ReactQueryDevtools initialIsOpen={false} />
