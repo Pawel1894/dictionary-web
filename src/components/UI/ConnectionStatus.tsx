@@ -29,7 +29,7 @@ export default function ConnectionStatus() {
 
   if (!isClosed && isOffline)
     return (
-      <div className="fixed bottom-8 md:top-4 right-1/2 translate-x-1/2 bg-neutral-200 p-4 rounded-md max-w-md w-11/12 z-30 shadow-sm dark:shadow-neutral-700">
+      <div className="fixed bottom-8 md:top-4 max-h-32 right-1/2 translate-x-1/2 bg-neutral-200 p-4 rounded-md max-w-md w-11/12 z-30 shadow-sm dark:shadow-neutral-700">
         <div>
           <span className="font-bold text-3xl dark:text-neutral-600">Offline</span>
           <p className="text-neutral-500">Your network is unavailable.</p>
