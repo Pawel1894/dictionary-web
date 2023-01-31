@@ -1,4 +1,5 @@
 import React, { ReactElement, useState, useEffect } from "react";
+import { getItem, saveItem } from "../../helpers/localStorage";
 
 export default function ThemeToggler(): ReactElement {
   const [darkTheme, setDarkTheme] = useState(false);
@@ -16,6 +17,7 @@ export default function ThemeToggler(): ReactElement {
 
     // firefox please implement css has selector 😥
     if (!bodyEl?.classList.contains("dark")) bodyEl?.classList.add("dark");
+    saveItem("theme", true);
   }
 
   function changeThemeToLight() {
@@ -26,11 +28,21 @@ export default function ThemeToggler(): ReactElement {
 
     // firefox please implement css has selector 😥
     if (bodyEl?.classList.contains("dark")) bodyEl?.classList.remove("dark");
+    saveItem("theme", false);
   }
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    const localData: boolean = getItem("theme");
+    if (localData === null) {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        changeThemeToDark();
+      } else {
+        saveItem("theme", false);
+      }
+    } else if (localData) {
       changeThemeToDark();
+    } else {
+      saveItem("theme", false);
     }
   }, []);
 
