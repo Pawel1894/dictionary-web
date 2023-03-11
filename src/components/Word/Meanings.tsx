@@ -7,5 +7,5 @@ type Props = {
 };
 
 export default function Meanings({ data }: Props) {
-  return <div>{data ? data.map((item, i) => <Meaning key={i} {...item} />) : null}</div>;
+  return <div>{data ? data.map((item) => <Meaning {...item} />) : null}</div>;
 }
