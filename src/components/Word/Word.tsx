@@ -19,6 +19,8 @@ export default function Word({ data, isInitialLoading, isError, error }: Props) 
 
   if (isError && error) return <Error error={error} />;
 
+  console.log("data", data);
+
   if (data && data.length > 0) {
     const audio = data[0].phonetics.find((item) => item.audio.length > 0);
     return (
